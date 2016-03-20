@@ -1,4 +1,4 @@
-#ifdef PROFILE_H
+#ifndef PROFILE_H
 #define PROFILE_H
 using namespace std;
 
@@ -6,7 +6,7 @@ class Profile{
 
 	public:
 		Profile();
-		Profile(string name, string filter, string remark);
+		Profile(string new_name, string new_filter, string new_remark);
 		string get_name(){
 			return name;
 		}
