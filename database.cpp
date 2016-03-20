@@ -47,7 +47,7 @@ void Database::search(string name){
 	}
 
 	if(num_found == 0){
-		cout << "No profile found." << endl;
+		cout << "No profile found" << endl;
 	}
 }
 
@@ -64,18 +64,6 @@ void Database::display_all(){
 
 	for(int i=0; i<used; i++){
 		data[i].output(cout);
-	}
-}
-
-void Database::remove(string name){
-
-	for(int i=0; i<used; i++){
-
-		if(data[i].get_name == name){
-
-			data[i] = data[used - 1];
-			used--;
-		}
 	}
 }
 
