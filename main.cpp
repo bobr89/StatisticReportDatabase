@@ -36,6 +36,7 @@ int main(){
 				case 2:{
 					string name;
 					cout << "Enter name of profile to find: ";
+					if(cin.peek() == '\n')cin.ignore();
 					getline(cin,name);
 					database.search(name);
 					break;
