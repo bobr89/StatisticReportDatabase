@@ -13,19 +13,41 @@ Profile::Profile(string new_name, string new_filter, string new_remark){
 
 void Profile::output(ostream& outs){
 
-	outs << "Name: " << name;
-	outs << "Filter: " << filter;
-	outs << "Remark: " << remark;
+	if(outs == cout){
+		outs << "Name: " << name << endl;
+		outs << "Filter: " << filter << endl;
+		outs << "Remark: " << remark << endl;
+	}
+	else{
+		outs << name << endl;
+		outs << filter << endl;
+		outs << remark << endl;
+	}
 }
 
 void Profile::input(istream& ins){
 
-	cout << "Name: ";
-	getline(ins, name);
-	cout << "Filter: ";
-	getline(ins, filter);
-	cout << "Remark: ";
-	getline(ins, remark);
+	if(ins == cin){
+
+		if(ins.peek() == '\n')ins.ignore();
+		cout << "Name: ";
+		getline(ins, name);
+		
+		cout << "Filter: ";
+		getline(ins, filter);
+
+		cout << "Remark: ";
+		getline(ins, remark);
+	}
+	else{
+
+		if(ins.peek() == '\n')ins.ignore();
+	    getline(ins,name);
+	    if(ins.peek() == '\n')ins.ignore();
+	    ins >> (ins,filter);
+	    if(ins.peek() == '\n')ins.ignore();
+	    getline(ins,remark);
+	}
 }
 
 ostream& operator <<(ostream& outs, Profile& tmp){
